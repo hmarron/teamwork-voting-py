@@ -1,0 +1,15 @@
+version: '2.3'
+
+services:
+  db:
+    container_name: db
+    image: mariadb:10.3.12
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: dev
+    healthcheck:
+      interval: 2s
+      retries: 30
+      test: "echo 'SELECT 1' | mysql --silent -u root --password=dev"
+    ports:
+      - "${DEV_ENV_HOST:-0.0.0.0}:${DEV_ENV_DB_PORT:-3306}:3306"
