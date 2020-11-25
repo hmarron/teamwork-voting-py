@@ -29,3 +29,10 @@ CREATE TABLE IF NOT EXISTS votes (
   CONSTRAINT `FK_polls_pollId` FOREIGN KEY (`pollId`) REFERENCES `polls` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+CREATE TABLE IF NOT EXISTS installation_tokens (
+  id int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  installationId int(10) UNSIGNED NOT NULL,
+  token varchar(100) UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UQ_installation_token` (`installationId`,`token`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

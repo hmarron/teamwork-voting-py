@@ -1,0 +1,22 @@
+{
+    "version": "1.0.2",
+      "chat": {
+        "commands": [{
+          "trigger": "create-poll",
+          "hint": "Creates a poll in the channel"
+        }, {
+          "trigger": "poll",
+          "hint": "Shows the current results of the last created poll"
+        },{
+            "trigger": "vote",
+            "hint": "vote in the current poll"
+        },{
+            "trigger": "poll-help",
+            "hint": "vote in the current poll"
+        }],
+        "bot": {
+          "handle": "notImplementedYet",
+          "avatar": "https://d299tnkksrstln.cloudfront.net/color/494e6a/emoji/emojione/icon/robot_192.png"
+        }
+      }
+  }
